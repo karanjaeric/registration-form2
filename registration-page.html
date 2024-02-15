@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<head>
+
+    <title>Registration Page</title>
+</head>
+
+<body>
+    <form id="registrationForm">
+
+        <input type="text" placeholder="name" id="name" onfocus="captureFocusEvent()" />
+        <input type="text" id="location" placeholder="location" onkeyup="captureKeyUpEvent()" />
+        <input type="text" placeholder="city" id="city" onkeypress="captureKeyPressEvent()" />
+        <input type="number" placeholder="age" id="age" onkeydown="captureKeyDownEvent()" />
+        <input type="text" id="location2" placeholder="Location2" />
+        <input type="submit" value="Register" />
+    </form>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit",function($event){
+            $event.preventDefault();
+            console.log($event);
+
+
+        });
+
+
+        document.getElementById("location2").addEventListener("keyup",function(){
+            var location2=document.getElementById("location2").value;
+            console.log("Location2 is...."+location2);
+        });
+
+        function captureFocusEvent() {
+            var name=document.getElementById("name").value;
+            console.log("Name is...."+name);
+        }
+
+        function captureKeyUpEvent() {
+            var location = document.getElementById("location").value;
+            console.log("The value is " + location);
+        }
+        function captureKeyPressEvent() {
+            var city = document.getElementById("city").value;
+            console.log("The City is " + city);
+        }
+        function captureKeyDownEvent() {
+            var age = document.getElementById("age").value;
+            console.log("The age is " + age);
+        }
+    </script>
+</body>
+
+</html>
